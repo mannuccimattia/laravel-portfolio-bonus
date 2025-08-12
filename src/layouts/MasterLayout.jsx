@@ -6,7 +6,7 @@ const MasterLayout = () => {
   return (
     <div className="site-wrapper d-flex flex-column min-vh-100">
       <Header />
-      <main className="flex-grow-1">
+      <main className="flex-grow-1 bg-dark text-light">
         <Outlet />
       </main>
       <Footer />

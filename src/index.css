@@ -1,3 +1,8 @@
-main {
-  background-color: gray;
+.logo-mm {
+  width: 50px;
+}
+
+.navbar-brand,
+.nav-link {
+  cursor: pointer;
 }
