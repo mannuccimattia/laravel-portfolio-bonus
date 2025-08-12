@@ -6,3 +6,7 @@
 .nav-link {
   cursor: pointer;
 }
+
+small.card-text {
+  min-height: 40px;
+}

@@ -11,7 +11,7 @@ const ProjectsPage = () => {
 
   const fetchProjects = () => {
     setIsLoading(true);
-    axios.get("http://127.0.0.1:8000/api/projects").then(resp => {
+    axios.get(`${import.meta.env.VITE_API_URL}`).then(resp => {
       setTimeout(() => {
         setProjects(resp.data.data);
         setIsLoading(false);
@@ -23,6 +23,7 @@ const ProjectsPage = () => {
     fetchProjects();
   }, []);
 
+  console.log('API URL:', import.meta.env.VITE_API_URL);
   return (
     <>
       <div className="container">
