@@ -1,16 +1,20 @@
-import React from 'react'
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import GlobalContext from './contexts/globalContext';
+import MasterLayout from './layouts/MasterLayout';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Homepage from './pages/Homepage';
 
 const App = () => {
   return (
     <>
-      <div className='d-flex flex-column min-vh-100'>
-        <Header />
-        <Main />
-        <Footer />
-      </div>
+      <GlobalContext.Provider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<MasterLayout />}>
+              <Route index element={<Homepage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </GlobalContext.Provider>
     </>
   )
 }
