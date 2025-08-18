@@ -23,13 +23,12 @@ const ProjectsPage = () => {
     fetchProjects();
   }, []);
 
-  console.log('API URL:', import.meta.env.VITE_API_URL);
   return (
     <>
       <div className="container">
         <div className="row mt-4">
           <div className="col-12">
-            <h1>ProjectsPage Content</h1>
+            <h1 className="text-secondary text-center">My projects</h1>
           </div>
         </div>
 

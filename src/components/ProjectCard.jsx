@@ -1,7 +1,10 @@
-import React from 'react';
+import { useNavigate } from "react-router-dom";
+import InfoSmall from "./InfoSmall";
 
 const ProjectCard = ({ project }) => {
-  const { name, client, date, type, description } = project;
+  const navigate = useNavigate();
+
+  const { id, name, client, date, type, description } = project;
 
   return (
     <div className='col-12 col-lg-6 col-xxl-4 d-flex'>
@@ -10,19 +13,14 @@ const ProjectCard = ({ project }) => {
           <h5 className="card-title mt-1 text-dark">{name}</h5>
         </div>
         <div className="card-body d-flex flex-column">
-          <small className="card-text mb-3 text-secondary">
-            {!type ? "Project " : `${type.name} project `}
-            {!client ? "made " : `made for ${client}`}
-            {` in ${date}`}
-          </small>
-
+          <InfoSmall type={type} client={client} date={date} />
           <p className="card-text flex-grow-1 text-white-50">
             {description.slice(0, 150)}...
           </p>
 
-          <a href="#" className="btn btn-sm btn-outline-primary mt-3 mx-auto">
+          <button onClick={() => navigate(`/projects/${id}`)} className="btn btn-sm btn-outline-primary mt-3 mx-auto">
             Find out more
-          </a>
+          </button>
         </div>
       </div>
     </div>
