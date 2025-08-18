@@ -15,7 +15,7 @@ const ProjectsPage = () => {
       setTimeout(() => {
         setProjects(resp.data.data);
         setIsLoading(false);
-      }, 600);
+      }, 300);
     }).catch(err => console.log(err));
   }
 
